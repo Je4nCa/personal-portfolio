@@ -253,6 +253,22 @@
   }
   @keyframes bake { 0%, 40% { width: 10%; } 70% { width: 100%; } 100% { width: 100%; } }
 
+  /* Cowork skill document */
+  .skill-doc { position: absolute; inset: 8% 9%; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--surface); overflow: hidden; font-family: var(--font-mono); font-size: 11px; color: var(--fg-muted); }
+  .sd-bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; border-bottom: 1px solid var(--line); color: var(--fg-faint); font-size: 10px; }
+  .sd-bar i { width: 7px; height: 7px; border-radius: 99px; background: var(--line-strong); }
+  .sd-bar span { margin-left: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sd-body { padding: 12px 14px; display: grid; gap: 5px; line-height: 1.5; }
+  .sd-k { color: var(--fg-faint); }
+  .sd-step { display: flex; gap: 10px; padding: 4px 8px; margin: 0 -8px; border-radius: 6px; color: var(--fg-muted); animation: step 6s var(--ease) infinite; }
+  .sd-step span:first-child { color: var(--fg-faint); }
+  .sd-step.s2 { animation-delay: 2s; } .sd-step.s3 { animation-delay: 4s; }
+  @keyframes step { 0%, 30% { background: var(--line); color: var(--fg); } 36%, 100% { background: transparent; } }
+  .sd-run { margin-top: 6px; display: flex; align-items: center; gap: 8px; color: var(--fg-faint); }
+  .sd-run .ready-dot { animation: blink 2s var(--ease) infinite; }
+  @keyframes blink { 50% { opacity: .3; } }
+  @media (max-width: 480px) { .skill-doc { font-size: 9.5px; } .sd-body { gap: 2px; padding: 8px 10px; } }
+
   /* ── More work (list) ───────────────────────────────────────── */
   .list { margin-top: 72px; border-top: 1px solid var(--line); }
   .row {
@@ -385,8 +401,8 @@
     </h1>
 
     <p class="hero-lede reveal" style="--d:500ms">
-      <span data-en>Software developer in Costa Rica and Microsoft 365 expert consultant at <strong>Accenture</strong>. On my own I build multi-agent AI systems, Claude Cowork skills and full-stack products — POS, e-invoicing, PWAs and web apps.</span>
-      <span data-es>Desarrollador de software en Costa Rica y consultor experto en Microsoft 365 en <strong>Accenture</strong>. Por mi cuenta construyo sistemas de IA multiagente, skills para Claude Cowork y productos full-stack: puntos de venta, facturación electrónica, PWAs y web apps.</span>
+      <span data-en>Software developer in Costa Rica and Microsoft 365 expert consultant at <strong>Accenture</strong>. I'm developing a Claude Cowork skill there, and on my own I build multi-agent AI systems and full-stack products — POS, e-invoicing, PWAs and web apps.</span>
+      <span data-es>Desarrollador de software en Costa Rica y consultor experto en Microsoft 365 en <strong>Accenture</strong>. Ahí desarrollo una skill de Claude Cowork y, por mi cuenta, construyo sistemas de IA multiagente y productos full-stack: puntos de venta, facturación electrónica, PWAs y web apps.</span>
     </p>
 
     <div class="cta reveal" style="--d:620ms">
@@ -415,8 +431,35 @@
 
     <div class="work-grid">
 
-      <!-- ORBIT -->
+      <!-- Claude Cowork skill -->
       <article class="card reveal">
+        <div class="card-media">
+          <div class="skill-doc" aria-hidden="true">
+            <div class="sd-bar"><i></i><i></i><i></i><span>skills / team-workflow / SKILL.md</span></div>
+            <div class="sd-body">
+              <div class="sd-k">---</div>
+              <div><span class="sd-k">name:</span> team-workflow</div>
+              <div><span class="sd-k">description:</span> <span data-en>Use when the team needs…</span><span data-es>Usar cuando el equipo necesita…</span></div>
+              <div class="sd-k">---</div>
+              <div class="sd-step s1"><span>01</span><span data-en>Gather the inputs</span><span data-es>Reunir los insumos</span></div>
+              <div class="sd-step s2"><span>02</span><span data-en>Apply the team's rules</span><span data-es>Aplicar las reglas del equipo</span></div>
+              <div class="sd-step s3"><span>03</span><span data-en>Produce a structured output</span><span data-es>Generar una salida estructurada</span></div>
+              <div class="sd-run"><span class="ready-dot"></span> <span data-en>Running in Cowork</span><span data-es>Corriendo en Cowork</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div>
+            <h3><span data-en>Claude Cowork Skill</span><span data-es>Skill para Claude Cowork</span></h3>
+            <p><span data-en>Developing a Claude Cowork skill at Accenture that packages a team workflow into a reusable, instruction-driven capability.</span><span data-es>Desarrollo una skill de Claude Cowork en Accenture que convierte un flujo de trabajo del equipo en una capacidad reutilizable guiada por instrucciones.</span></p>
+            <div class="tags"><span class="tag">Claude Cowork</span><span class="tag">Agent Skills</span><span class="tag">Instructions as code</span></div>
+          </div>
+          <span class="yr">Accenture · 2026</span>
+        </div>
+      </article>
+
+      <!-- Multi-agent orchestration (Copilot Studio) -->
+      <article class="card reveal" style="--d:120ms">
         <div class="card-media">
           <div class="panel" aria-hidden="true">
             <svg viewBox="0 0 420 260">
@@ -435,21 +478,21 @@
                 <circle class="p" r="2.6"><animateMotion dur="3.2s" begin="0.6s" repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines=".4 0 .2 1"><mpath href="#e6"/></animateMotion></circle>
               </g>
               <rect class="n" x="10" y="34" width="110" height="32" rx="8"/><text class="t" x="65" y="54" text-anchor="middle">RESEARCHER</text>
-              <rect class="n" x="10" y="114" width="110" height="32" rx="8"/><text class="t" x="65" y="134" text-anchor="middle">SKU RETRIEVER</text>
+              <rect class="n" x="10" y="114" width="110" height="32" rx="8"/><text class="t" x="65" y="134" text-anchor="middle">SKU &amp; LICENSING</text>
               <rect class="n" x="10" y="194" width="110" height="32" rx="8"/><text class="t" x="65" y="214" text-anchor="middle">FORECAST</text>
               <rect class="n" x="300" y="34" width="110" height="32" rx="8"/><text class="t" x="355" y="54" text-anchor="middle">EMAIL DRAFTER</text>
               <rect class="n" x="300" y="114" width="110" height="32" rx="8"/><text class="t" x="355" y="134" text-anchor="middle">SCOPE AGENT</text>
               <rect class="n" x="300" y="194" width="110" height="32" rx="8"/><text class="t" x="355" y="214" text-anchor="middle">OPPORTUNITY</text>
               <rect class="n-main" x="160" y="106" width="100" height="48" rx="12"/>
-              <text class="t-main" x="210" y="127" text-anchor="middle">ORBIT</text>
+              <text class="t-main" x="210" y="127" text-anchor="middle">ORCHESTRATOR</text>
               <text class="t-main" x="210" y="141" text-anchor="middle" opacity=".6" font-size="8">SUPERVISOR</text>
             </svg>
           </div>
         </div>
         <div class="card-body">
           <div>
-            <h3>ORBIT — Multi-Agent System</h3>
-            <p><span data-en>A supervisor agent classifies seller intent and routes each request to 6+ specialized agents, each with scoped instructions, tools and knowledge.</span><span data-es>Un agente supervisor clasifica la intención del vendedor y enruta cada solicitud a más de 6 agentes especializados, cada uno con instrucciones, herramientas y conocimiento propios.</span></p>
+            <h3><span data-en>Multi-Agent Orchestration Agent</span><span data-es>Agente de orquestación multiagente</span></h3>
+            <p><span data-en>Built in Copilot Studio: a supervisor agent routes each request to 6+ specialized agents — research, SKU &amp; licensing, forecasting, scoping, email — grounded on SharePoint with live data via Power Automate.</span><span data-es>Construido en Copilot Studio: un agente supervisor enruta cada solicitud a más de 6 agentes especializados —investigación, SKU y licencias, forecast, alcance, correos— con RAG sobre SharePoint y datos en vivo vía Power Automate.</span></p>
             <div class="tags"><span class="tag">Copilot Studio</span><span class="tag">Power Automate</span><span class="tag">RAG</span><span class="tag">YAML</span></div>
           </div>
           <span class="yr"><span data-en>Personal project · 2026</span><span data-es>Proyecto personal · 2026</span></span>
@@ -457,7 +500,7 @@
       </article>
 
       <!-- La Vera Pizza -->
-      <article class="card reveal" style="--d:120ms">
+      <article class="card reveal">
         <div class="card-media">
           <div class="kds" aria-hidden="true">
             <div class="kds-col">
@@ -486,7 +529,7 @@
       </article>
 
       <!-- Ranger SWAT -->
-      <a class="card reveal" href="https://ranger-swat.app/" target="_blank" rel="noopener">
+      <a class="card reveal" style="--d:120ms" href="https://ranger-swat.app/" target="_blank" rel="noopener">
         <div class="card-media"><img src="work/ranger.jpg" alt="Ranger SWAT e-invoicing app" loading="lazy" /></div>
         <div class="card-body">
           <div>
@@ -499,7 +542,7 @@
       </a>
 
       <!-- D_Rabbit -->
-      <a class="card reveal" style="--d:120ms" href="https://d-rabbit.online/" target="_blank" rel="noopener">
+      <a class="card reveal" href="https://d-rabbit.online/" target="_blank" rel="noopener">
         <div class="card-media"><img src="work/drabbit.jpg" alt="D_Rabbit artist portfolio" loading="lazy" /></div>
         <div class="card-body">
           <div>
@@ -511,29 +554,27 @@
         </div>
       </a>
 
+      <!-- Talenta -->
+      <a class="card reveal" style="--d:120ms" href="https://talentaapp.com/" target="_blank" rel="noopener">
+        <div class="card-media"><img src="work/talenta.jpg" alt="Talenta management platform" loading="lazy" /></div>
+        <div class="card-body">
+          <div>
+            <h3>Talenta — Management Platform <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></h3>
+            <p><span data-en>Web platform with individual user accounts, used from the browser or installed as an app on any phone.</span><span data-es>Plataforma web con cuentas de usuario individuales, desde el navegador o instalada como app en cualquier teléfono.</span></p>
+            <div class="tags"><span class="tag">Web app</span><span class="tag">Auth</span><span class="tag">PWA</span></div>
+          </div>
+          <span class="yr">2026</span>
+        </div>
+      </a>
+
     </div>
 
     <!-- More work -->
     <div class="list">
-      <a class="row reveal" href="https://talentaapp.com/" target="_blank" rel="noopener">
-        <h4>Talenta</h4>
-        <p><span data-en>Management platform with user accounts, installable on any device as a PWA.</span><span data-es>Plataforma de administración con cuentas de usuario, instalable en cualquier dispositivo como PWA.</span></p>
-        <span class="meta">PWA · 2026 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
-      </a>
-      <div class="row reveal">
-        <h4><span data-en>M365 SKU &amp; Licensing Agent</span><span data-es>Agente de SKU y licencias M365</span></h4>
-        <p><span data-en>Two editions (Copilot Studio + M365 Copilot), grounded on SharePoint with live data via Power Automate; instructions compacted to the 7,000-char limit.</span><span data-es>Dos ediciones (Copilot Studio + M365 Copilot), con RAG sobre SharePoint y datos en vivo vía Power Automate; instrucciones compactadas al límite de 7,000 caracteres.</span></p>
-        <span class="meta">Copilot Studio · 2026</span>
-      </div>
       <div class="row reveal">
         <h4><span data-en>Claude Code &amp; MCP environment</span><span data-es>Entorno Claude Code y MCP</span></h4>
         <p><span data-en>Claude Code on macOS and Windows connected to a custom Model Context Protocol server for image generation.</span><span data-es>Claude Code en macOS y Windows conectado a un servidor MCP propio para generación de imágenes.</span></p>
         <span class="meta">MCP · 2026</span>
-      </div>
-      <div class="row reveal">
-        <h4><span data-en>Claude Cowork skills</span><span data-es>Skills para Claude Cowork</span></h4>
-        <p><span data-en>Custom Agent Skills that package repeatable workflows into reusable, instruction-driven capabilities.</span><span data-es>Agent Skills personalizadas que empaquetan flujos repetibles en capacidades reutilizables guiadas por instrucciones.</span></p>
-        <span class="meta">Agent Skills · 2026</span>
       </div>
       <div class="row reveal">
         <h4><span data-en>Interactive invitation &amp; RSVP</span><span data-es>Invitación interactiva y RSVP</span></h4>
@@ -566,6 +607,8 @@
             <li data-es>Consultor experto en entornos empresariales de <strong>Microsoft 365</strong>: resolución de incidencias complejas, optimización de despliegues y guía en buenas prácticas en M365, Azure y Dynamics 365.</li>
             <li data-en>Main post-sales technical contact: current-state assessments, requirements, licensing optimization, renewals and expansion.</li>
             <li data-es>Punto de contacto técnico post-venta: evaluación del estado actual, requerimientos, optimización de licencias, renovaciones y expansión.</li>
+            <li data-en>Developing a <strong>Claude Cowork skill</strong> that turns a team workflow into a reusable, instruction-driven capability.</li>
+            <li data-es>Desarrollo una <strong>skill de Claude Cowork</strong> que convierte un flujo de trabajo del equipo en una capacidad reutilizable guiada por instrucciones.</li>
             <li data-en>Led AI and Copilot training for new joiners and internal teams, with Microsoft 365 Copilot agent demos for client workshops.</li>
             <li data-es>Impartí capacitaciones de IA y Copilot a nuevos ingresos y equipos internos, con demos de agentes de Microsoft 365 Copilot para talleres con clientes.</li>
           </ul>
@@ -578,10 +621,8 @@
           <h3 class="xp-role"><span data-en>Independent Software Developer &amp; AI Builder</span><span data-es>Desarrollador de software independiente y AI builder</span></h3>
           <p class="xp-org"><span data-en>Freelance · </span><span data-es>Freelance · </span><a href="https://montevostudio.com/" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px">montevostudio.com</a></p>
           <ul>
-            <li data-en>Designed <strong>ORBIT</strong>, a supervisor/child multi-agent system with 6+ specialized agents, plus an M365 licensing agent grounded with RAG and live Power Automate data.</li>
-            <li data-es>Diseñé <strong>ORBIT</strong>, un sistema multiagente supervisor/hijos con más de 6 agentes especializados, y un agente de licencias M365 con RAG y datos en vivo de Power Automate.</li>
-            <li data-en>Create custom skills for <strong>Claude Cowork</strong> that turn repeatable workflows into reusable capabilities.</li>
-            <li data-es>Creo skills personalizadas para <strong>Claude Cowork</strong> que convierten flujos repetibles en capacidades reutilizables.</li>
+            <li data-en>Built a <strong>multi-agent orchestration agent</strong> in Copilot Studio: a supervisor routes requests to 6+ specialized agents, grounded with RAG and live Power Automate data.</li>
+            <li data-es>Construí un <strong>agente de orquestación multiagente</strong> en Copilot Studio: un supervisor enruta solicitudes a más de 6 agentes especializados, con RAG y datos en vivo de Power Automate.</li>
             <li data-en>Built a real-time restaurant POS with a live kitchen display and dashboards (React, TypeScript, Firebase).</li>
             <li data-es>Construí un punto de venta en tiempo real con pantalla de cocina y dashboards (React, TypeScript, Firebase).</li>
             <li data-en>Shipped an e-invoicing PWA for Hacienda v4.4, a management platform with user accounts, and interactive web experiences.</li>
